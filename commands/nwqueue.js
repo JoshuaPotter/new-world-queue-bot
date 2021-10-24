@@ -18,7 +18,7 @@ const getServer = (serverName, interaction) => {
 				return;
 			}
 
-			await interaction.reply(`There are currently ${players_current}/${players_maximum} players connected to **${toTitleCase(serverName)}.`)
+			await interaction.reply(`There are currently ${players_current}/${players_maximum} players connected to **${toTitleCase(serverName)**}.`);
 
 			// Server has no queue
 			if (queue_current > 0) {
