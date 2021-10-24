@@ -22,7 +22,7 @@ const getServer = (serverName, interaction) => {
 
 			// Server has no queue
 			if (queue_current > 0) {
-				await interaction.reply(`${player_count} The estimated queue length is **${queue_current}**, with an estimated wait time of **${queue_wait_time_minutes} minutes**.`);
+				await interaction.reply(`${player_count} The estimated queue length is **${queue_current}** with an estimated wait time of **${queue_wait_time_minutes} minutes**.`);
 			} else {
 				await interaction.reply(`${player_count} There is no queue!`);
 			}
