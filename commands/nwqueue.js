@@ -18,16 +18,13 @@ const getServer = (serverName, interaction) => {
 				return;
 			}
 
-			// Server has no queue
-			if (players_current < players_maximum) {
-				await interaction.reply(`There's no queue on **${toTitleCase(serverName)}**!`);
-				return;
-			}
+			await interaction.reply(`There are currently ${players_current}/${players_maximum} players connected to **${toTitleCase(serverName)}.`)
 
-			// Server is full
-			// Display queue and wait time
-			if (players_current >= players_maximum) {
+			// Server has no queue
+			if (queue_current > 0) {
 				await interaction.reply(`The estimated queue length for **${toTitleCase(serverName)}** is **${queue_current}**. Estimated wait time is **${queue_wait_time_minutes} minutes**.`);
+			} else {
+				await interaction.reply(`There's no queue on **${toTitleCase(serverName)}**!`);
 			}
 		})
 		.catch(async (error) => {
